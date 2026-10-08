@@ -1,407 +1,1283 @@
-
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-
-    <title>codeforces account information</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/series-label.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/modules/export-data.js"></script>
-<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" >
-</script>
-
- <style> 
-body{
-     background-image: url("a123.jpeg");
-      background-repeat: no-repeat;
-       background-position: center;
-        background-size: cover;
-    width: 700px;
-    height: 700px;
-}
-img {
-  border: 1px solid #ddd;
-  border-radius: 50%;
-  padding: 5px;
-  width: 150px;
-}
-table, th, td {
-  background-color: white;
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-th, td {
-  padding: 5px;
-}
-.user
-{
-font-size: 40px;
-font-weight: bold;
-margin=10px ;
-padding=10px;
-}
-.properties{
-font-size:20px: 
-margin=10p;
-padding=10px;
-}
-
- 
-.navbar{
-    padding-top: 15x;
-    font-size: 20px;
-    width:1200px;
-    position:relative;
-    margin-right: 40px;
-}
-.name
-{
-    padding: 25px 50px 75px 100px;
-    font-family: "Times New Roman", Times, serif;
-    text-transform: uppercase;
-    font-size: 20px;
-}
-/* The navbar container */
-.topnav a {
-  overflow: hidden;
-  background-color: white;
-}
-
-/* Navbar links */
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-/* Links - change color on hover */
-.topnav a:hover {
-  background-color: white;
-  color: black;
-}
-
-
-</style></head>
-
-
-
+    <meta charset="UTF-g">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pooja Parlapalli | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* CSS Reset */
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed,
+        figure, figcaption, footer, header, hgroup,
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+        /* Base Body Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            overflow-x: hidden; 
+            transition: background-color 0.5s, color 0.5s;
+        }
+        .fade-in-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        header {
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: left;
+            padding: 20px;
+            position: relative;
+            height: 350px; 
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            left: -200px; 
+            width: 600px; 
+            height: 600px; 
+            background: radial-gradient(
+                circle at 10% 10%, 
+                rgba(135, 206, 235, 0.1) 0%, 
+                transparent 50% 
+            );
+            pointer-events: none;
+            z-index: 0;
+        }
+        header img, header div {
+            position: relative;
+            z-index: 10;
+        }
+        nav {
+            background-color: #1a1a1a;
+            padding: 15px 20px;
+            text-align: right;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .bulb-icon {
+            font-size: 24px;
+            cursor: pointer;
+            color: #fff;
+            margin: 0;
+            order: -1;
+            padding-right: 15px;
+        }
+        .nav-links-container {
+            display: flex;
+            align-items: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 8px 12px;
+            font-size: 16px;
+            transition: all 0.3s;
+            border-radius: 4px;
+        }
+        nav a:hover,
+        nav a.active-link { 
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-bottom: 2px solid #FF9F55;
+            transform: translateY(-2px);
+        }
+        .resume-link {
+            margin-left: 20px;
+        }
+        #Projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+        .project-entry {
+            flex: 0 0 calc(25% - 20px); 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 10px; 
+            background-color: #fff; 
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+        }
+        .project-entry:hover {
+            cursor: pointer;
+            transform: translateY(-10px); 
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); 
+            border-color: transparent; 
+        }
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .project-description {
+            margin-top: 10px;
+            font-family: sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            letter-spacing: 0.5px;
+            text-align: justify;
+        }
+        .project-entry .image {
+            height: 100px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 180px; 
+        }
+       .project-entry img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin: 0 0 15px 0;
+            float: none;
+            display: block;
+            max-width: 100%;
+        }
+        .project-entry:hover::before {
+            content: ''; 
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            color: #ffffff;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .project-entry:hover::before {
+            opacity: 10;
+        }
+        @media screen and (max-width: 1024px) {
+            .project-entry {
+                flex-basis: calc(50% - 20px); 
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .project-entry {
+                flex-basis: calc(100% - 20px); 
+            }
+        }
+        header img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+            margin-right: 20px;
+            float: left;
+            background-color: #444;
+        }
+        header div {
+            margin-left: 220px; 
+        }
+        header h1 {
+            margin: 10px 0;
+            font-size: 36px;
+            font-family: 'Comic Sans MS', cursive;
+            margin-bottom: 10px;
+            text-transform: uppercase; 
+            letter-spacing: 5px;
+        }
+        header p {
+            margin: 0;
+            font-size: 18px;
+        }
+        .entry-details, .project-description {
+            flex-grow: 1;
+        }
+        h2, h3, h4 {
+            color: #333; 
+        }
+        footer {
+            position: relative;
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            padding: 30px 20px; 
+            width: 100%; 
+            box-sizing: border-box;
+        }
+        .contact-header {
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #FF9F55; 
+            letter-spacing: 2px;
+        }
+        .footer-contact-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px; 
+            margin-top: 20px; 
+        }
+        .footer-contact-icons img {
+            width: 30px;
+            height: 30px;
+            filter: invert(1); 
+            transition: transform 0.2s ease-in-out;
+        }
+        .footer-contact-icons a:hover img {
+            transform: scale(1.2); 
+        }
+        .fixed-contact-sidebar {
+            position: fixed;
+            bottom: 20px; 
+            left: 20px; 
+            z-index: 900; 
+            display: flex;
+            flex-direction: column;
+            gap: 10px; 
+        }
+        .fixed-contact-sidebar img {
+            width: 30px;
+            height: 30px;
+            filter: invert(0.8); 
+            transition: transform 0.2s;
+        }
+        .dark-theme .fixed-contact-sidebar img {
+            filter: invert(1); 
+        }
+        .fixed-contact-sidebar a:hover img {
+            transform: scale(1.15); 
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .dark-theme {
+            background-color: #1a1a1a; 
+            color: #fff; 
+        }
+        .dark-theme h2, .dark-theme h3, .dark-theme h4, .dark-theme h5, .dark-theme p {
+            color: #fff;
+        }
+        .dark-theme .project-entry {
+            background-color: #2c2c2c;
+            border-color: #444;
+        }
+        .dark-theme header p, .dark-theme header h1, .dark-theme header h2 {
+            color: #fff;
+        }
+        .dark-theme .education-details {
+             background-color: rgba(44, 44, 44, 0.8);
+        }
+        .dark-theme .education-details h3, .dark-theme .education-details h4, .dark-theme .education-details p {
+            color: #fff;
+        }
+        hr {
+            margin: 1rem 0;
+            border: none;
+            border-top: 1px solid #ccc;
+        }
+        .tag-cloud {
+            display: flex;
+            justify-content: center;
+        }
+        .cloud {
+            list-style: none;
+            padding-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            line-height: 2.75rem;
+            max-width: 900px;
+        }
+        ul.cloud a {
+            --size: 4;
+            --color: #817c8198;
+            color: var(--color);
+            font-size: calc(var(--size) * 0.2rem + 0.1rem);
+            display: block;
+            padding: 0.105rem 0.105rem;
+            position: relative;
+            text-decoration: none;
+            border-bottom: none;
+        }
+        ul.cloud a[data-weight="1"] { --size: 1; }
+        ul.cloud a[data-weight="2"] { --size: 2; }
+        ul.cloud a[data-weight="3"] { --size: 3; }
+        ul.cloud a[data-weight="4"] { --size: 4; }
+        ul.cloud a[data-weight="5"] { --size: 6; }
+        ul.cloud a[data-weight="6"] { --size: 8; }
+        ul.cloud a[data-weight="7"] { --size: 10; }
+        ul.cloud a[data-weight="8"] { --size: 16; }
+        ul[data-show-value] a::after {
+            content: " (" attr(data-weight) ")";
+            font-size: 1rem;
+        }
+        ul.cloud li:nth-child(2n+1) a { color: #3D5A80; } 
+        ul.cloud li:nth-child(3n+1) a { color: #98C1D9; } 
+        ul.cloud li:nth-child(4n+1) a { color: #008185b0; } 
+        ul.cloud a:focus {
+            outline: 1px dashed;
+        }
+        ul.cloud a::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0%;
+            width: 0;
+            height: 0%;
+            background: var(--color);
+            transform: translate(-50%, 0);
+            opacity: 0.15;
+            transition: width 0.25s;
+        }
+        ul.cloud a:focus::before,
+        ul.cloud a:hover::before {
+            width: 100%;
+        }
+        .experience-timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            bottom: 210px;
+            width: 6px;
+            background-color: #ddd;
+            left: 230px; 
+            margin-left: -3px; 
+        }
+        .timeline-item {
+            padding: 10px 0px 50px 280px; 
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            left: 230px;
+            margin-left: -19px; 
+            background-color: white;
+            border: 4px solid #FF9F55;
+            top: 25px; 
+            border-radius: 50%;
+            z-index: 1;
+            transform: translateX(-50%); 
+        }
+        .timeline-image-container {
+            position: absolute;
+            left: -20px;
+            top: 10px;
+            width: 230px; 
+            text-align: center;
+        }
+        .experience-image {
+            width: 210px;
+            height: 210px;
+            border-radius: 15px;
+            border: 3px solid #eee;
+            padding: 5px;
+            object-fit: contain; 
+            background-color: #fff; 
+        }
+        .experience-image-spanning {
+            height: 200px; 
+            object-position: top; 
+        }
+        .timeline-content {
+            position: relative;
+            background-color: #f9f9f9; 
+        }
+        .dark-theme .timeline-content {
+            background-color: #1a1a1a; 
+        }
+        .timeline-content h2,
+        .timeline-content h5,
+        .timeline-content h6,
+        .timeline-content p {
+            margin: 0; 
+            text-align: left;
+        }
+        .timeline-content h6 {
+            color: #999;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .timeline-content h2 {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+        .timeline-content h5 {
+            color: #555;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        .dark-theme .timeline-content h5 {
+            color: #ccc;
+        }
+        .timeline-content p {
+            font-family: sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            letter-spacing: 0.5px;
+            text-align: justify;
+        }
+        @media screen and (max-width: 768px) {
+            .experience-timeline::before {
+                left: 30px; 
+            }
+            .timeline-item {
+                padding-left: 70px; 
+                padding-right: 15px;
+            }
+            .timeline-item::before {
+                left: 30px; 
+            }
+            .timeline-image-container {
+                display: none;
+            }
+        }
+        .education-entry {
+            position: relative; 
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        .college-image {
+            position: relative; 
+            width: 580px;
+            height: 350px;
+            left: 20%;
+            margin: 0 auto 50px; 
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .education-details {
+            position: absolute; 
+            top: 50%; 
+            left: 37%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.7); 
+            padding: 20px;
+            z-index: 1;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            margin-top: -0px;
+        }
+        .education-entry.flipped .education-details {
+            left: 65%;
+        }
+        .education-entry.flipped .college-image {
+            left: auto;
+            right: 20%;
+        }
+        .project-title,
+        .project-description {
+            color: black;
+        }
+        a.project-entry {
+            text-decoration: none;
+        }
+        .dark-theme .project-title,
+        .dark-theme .project-description {
+            color: white;
+        }
+        .education-details h3,
+        .education-details h4 {
+            margin: 10px 0;
+            color: #333;
+        }
+        .no-circle::before {
+            display: none;
+        }
+        .education-details p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .chat-widget-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 2000;
+            user-select: none;
+        }
+        .chat-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #1a1a1a;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .chat-icon:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+        .chat-icon i {
+            font-size: 28px;
+        }
+        .chat-window {
+            width: 350px;
+            height: 450px;
+            border-radius: 12px;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            transition: all 0.3s ease-in-out;
+            transform-origin: bottom right;
+        }
+        .chat-window.hidden {
+            transform: scale(0);
+            opacity: 0;
+            pointer-events: none;
+        }
+        .chat-window * {
+            font-family: 'Arial', sans-serif;
+        }
+        .chat-header {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+        .chat-header button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        .chat-header button:hover {
+            opacity: 1;
+        }
+        .chat-body {
+            flex-grow: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .chat-body.hidden, 
+        .chat-input-area.hidden { 
+            display: none; 
+        }
+        .message {
+            max-width: 85%;
+            padding: 10px 15px;
+            border-radius: 15px;
+            line-height: 1.4;
+            font-size: 14px;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+        }
+        .ai-message {
+            background-color: #e0e0e0;
+            color: #1a1a1a;
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+        }
+        .user-message {
+            background-color: #424242;
+            color: #fff;
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
+        .chat-input-area {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+        .send-icon {
+            width: 16px;
+            height: 16px;
+            fill: white;
+            transform: rotate(90deg);
+        }
+        .close-icon {
+            width: 18px;
+            height: 18px;
+        }
+        .chat-input-controls {
+            display: flex;
+            width: 100%;
+        }
+        .chat-input-area input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            margin-right: 10px;
+            outline: none;
+        }
+        .chat-input-area button {
+            background-color: #1a1a1a;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+        .chat-input-area button:hover {
+            background-color: #424242;
+        }
+        #chat-prompts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding-bottom: 12px;
+            justify-content: center;
+        }
+        .prompt-button {
+            height: auto !important;
+            width: auto !important;
+            padding: 8px 14px !important;
+            border-radius: 8px !important;
+            background-color: #f0f0f0 !important;
+            color: #333 !important;
+            font-size: 13px !important;
+            border: 1px solid #ccc !important;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            text-align: center !important;
+            margin: 4px !important;
+            flex-shrink: 0 !important;
+        }
+        .prompt-button:hover {
+            background-color: #e0e0e0 !important;
+            border-color: #bbb !important;
+        }
+        .chat-login-form {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+        }
+        .chat-login-form h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .chat-login-form.hidden {
+            display: none;
+        }
+        .chat-login-form input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+        .chat-login-form button {
+            width: 100%;
+            padding: 12px;
+            background-color: #1a1a1a;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .chat-login-form button:hover {
+            background-color: #424242;
+        }
+        .loading-dots {
+            align-self: flex-start;
+            display: none;
+            padding: 10px 15px;
+            background-color: #e0e0e0;
+            border-radius: 15px;
+            border-bottom-left-radius: 5px;
+            font-size: 14px;
+            color: #333;
+        }
+        .loading-dots span {
+            animation: blink 1.4s infinite;
+        }
+        .loading-dots span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .loading-dots span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        @keyframes blink {
+            0%, 80%, 100% { opacity: 0; }
+            40% { opacity: 1; }
+        }
+        .loading-dots.visible {
+            display: block;
+        }
+    </style>
+</head>
 <body>
-    <a href=""><img class="logo" src="codeforces.jpg"></style></a>
-     
-   HANDLE: <input type="text" id="handle1">
-   <input type="submit" id="submit" onclick="checkUser();">
-    
- 
-<div class="jumbotron" style="background-color=orange;" >
-  <h1 id="name"  ></h1>
-  
-</div>
-<table id="result"></table>
-<div id="container" style="width:100%; height:400px;"></div>
-<div id="chartContainer" style="width:100%; height:400px;"></div>
-
-
-
-<script>
-  var a;
-  function checkUser()
-  {
-     a=document.getElementById("handle1").value;
-    $.ajax({
-        url: "https://codeforces.com/api/user.info?handles="+a,
-        type: "GET",
-        dataType: "json", // added data type
-        success: function(res) {
-            //console.log(res)
-            alert(res.status);
-            USERPROFILE(a);
-
-        },
-        error: function(res) {
-            //console.log(res)
-            alert("user not found");
-        },
-    });
-
-  }
-
-  function USERPROFILE(a)
-  {
-
-document.getElementById('result').innerHTML=" ";
-var xhttp1= new XMLHttpRequest();
- xhttp1.onreadystatechange=function(){
-                                    if(this.readyState==4 && this.status==200)
-                                    {
-                                       var data = this.responseText;
-        var jsonResponse = JSON.parse(data);
-                                      
-        var row1=jsonResponse.result[0]
-        console.log(row1);
+    <nav>
+        <i class="far fa-lightbulb bulb-icon" onclick="toggleTheme()"></i> 
+        <div class="nav-links-container">
+            <a href="#About">About</a>
+            <a href="#Projects">Projects</a>
+            <a href="#Skills">Skills</a>
+            <a href="#Contact">Contact</a>
+            <a href="Pooja_Parlapalli_Resume_v1_WIP.docx" class="resume-link" download><i class="fas fa-file-download"></i> Resume</a>
+        </div>
+    </nav>
+    <header>
+        <!-- PROFILE PICTURE PLACEHOLDER -->
+        <img src="images/profile_placeholder.jpg" alt="Pooja Parlapalli" style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover; object-position: center; margin-right: 20px; float: left; background-color: #444;">
+        <div style="margin-left: 220px;">
+            <h1 style="font-family: 'Comic Sans MS', cursive; margin-bottom: 10px;">Pooja Parlapalli</h1>
+            <h2 class="section-title" style="margin-bottom: 20px;">Welcome</h2>
+            <p>Hello,<br> <br> </p>
+            <p>I am a Full-Stack Software Engineer with 6+ years of experience building scalable web applications and backend services using Java, Spring, React, REST APIs and GraphQL. My experience includes software engineering at Goldman Sachs, working on API platforms, data-intensive systems, workflow automation, open-source development, and full-stack applications. I have a strong foundation in backend engineering, data modeling, API integration, cloud technologies, and building reliable user-facing applications.</p>
+            <a href="Pooja_Parlapalli_Resume_v1_WIP.docx" class="resume-link" download style="font-size: 14px; color: #fff; text-decoration: none; background-color: #494d49; padding: 12px 24px; border-radius: 25px; display: inline-block; margin-top: 20px; box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); transition: background-color 0.3s, transform 0.3s;">
+                Download Resume
+            </a>
+        </div>
+    </header>
+    <div class="content">
+        <section id="About">
+            <h2 class="section-title" style="margin-bottom: 50px; text-align: left; font-size: 24px;">Experiences</h2>
         
-        var table = document.createElement('table');
-        table.setAttribute('class', 'history');
-        var properties =Object.keys(row1);
-   
-            
-        var capitalize = function(s) {
-            return s.charAt(0).toUpperCase() + s.slice(1);
-        }
-        var tr = document.createElement('tr');
-        for (var i = 0; i < properties.length; i++) {
-
-            var th = document.createElement('th');
-            th.appendChild(document.createTextNode(properties[i]));
-            tr.appendChild(th);
-        }
-        table.appendChild(tr);
-        var tr, row;
-        for (var r = 0; r < 1; r++) {
-            tr = document.createElement('tr');
-            row = Object.values(row1);console.log(row[6]);
-            document.getElementById("name").innerHTML=row1["handle"];
-            
-            for (var i = 0; i < row.length; i++) {
-                var td = document.createElement('td');
-                td.appendChild(document.createTextNode(row[i]));
+            <div class="experience-timeline">
                 
-                tr.appendChild(td);}
-            
-            table.appendChild(tr);
-        }
-        document.getElementById('result').appendChild(table);
-
-    }
-};
- xhttp1.open("GET","https://codeforces.com/api/user.info?handles="+a,true);
- xhttp1.send();
-
-
-
-/*
- /*var xhttp = new XMLHttpRequest();
- xhttp.onreadystatechange=function(){
-                                    if(this.readyState==4 && this.status==200)
-                                    {
-                                        var o=JSON.parse(xhttp.responseText);
-                                        var info=o.result;
-                                        //var name=a[0].lastName;
-
-                                        //console.log(a[0].country)
-                                        pushIt(info);
-                                        
-                                        
-                                    }
-                                    };
- xhttp.open("GET","https://codeforces.com/api/user.info?handles="+a,true);
- xhttp.send();
-
-
-
-
-
-function pushIt(d)
-{
-   document.getElementById("f_name").innerHTML = d.firstName
-   document.getElementById("myText").innerHTML = d.lastName
-   document.getElementById("frends").innerHTML = d.friendOfCount
-   document.getElementById("rating").innerHTML = d.rating
-   document.getElementById("country").innerHTML = d.country
-   document.getElementById("org").innerHTML = d.organization
-   document.getElementById("handle").innerHTML = d.handle
-    
-}*/
-
-
-//graph
- var xhttp3= new XMLHttpRequest();
- xhttp3.onreadystatechange=function(){
-                                  if(this.readyState==4 && this.status==200)
-                                  {
-                                    var o=JSON.parse(xhttp3.responseText);
-                                    //console.log(o);
-                                        var rate=[];
-                                        rate=o.result;
-                                        //console.log(a.rank)
-                                    graph(rate);
-                                  }
-                                    };
- xhttp3.open("GET","https://codeforces.com/api/user.rating?handle="+a,true);
- xhttp3.send();
-  
-
- var c;
- function graph(rate1)
- {
-     c=[];
-     d=[];
-    for(var i=0;i<rate1.length;i++)
-    {
-        //cosole.log(a[i].rank)
-        c.push(rate1[i].rank);
-        d.push(rate1[i].contestId)
-    }
-
-
-    Highcharts.chart('container', {
-
-    title: {
-        text: 'rating '
-    },
-
-    subtitle: {
-        text: 'rating'
-    },
-    xAxis:{
-      categories:d
-    },
-    
-   
-    yAxis: {
-        title: {
-            text: 'rating'
-        }
-    },
-    legend: {
-        layout: 'vertical',
+                <div class="timeline-item fade-in-on-scroll" style="padding-bottom: 0px; margin-bottom: 5px;">
+                    <div class="timeline-image-container">
+                        <!-- SEMICAB LOGO PLACEHOLDER -->
+                        <img src="images/semicab_logo.png" alt="SEMICAB Logo" class="experience-image experience-image-spanning">
+                    </div>
+                    <div class="timeline-content">
+                        <h6>Mar 2025 - Present</h6>
+                        <h2>SEMICAB</h2>
+                        <h5>Full-Stack Software Engineer</h5>
+                        <p>Developed full-stack applications using Java/Spring on the backend and React on the frontend, implementing business functionality across UI, APIs, and data integrations. Built React-based application features including E-Challan and Load Management, integrating frontend workflows with backend Java APIs. Developed functionality for a Progressive Web Application (PWA) including push notifications, image capture, and offline capabilities. Worked on WhatsApp integration using AWS and Meta APIs, integrating external messaging capabilities with application workflows. Designed and implemented backend APIs to integrate with external sources and support application business logic and data operations.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in-on-scroll">
+                    <div class="timeline-image-container">
+                        <!-- GOLDMAN SACHS LOGO PLACEHOLDER -->
+                        <img src="images/gs_logo.png" alt="Goldman Sachs Logo" class="experience-image">
+                    </div>
+                    <div class="timeline-content">
+                        <h6>Apr 2024 - Nov 2024</h6>
+                        <h2>Goldman Sachs</h2>
+                        <h5>Senior Software Engineer - Smart Workflows & Data Migration</h5>
+                        <p>Engineered intelligent BPMN-based workflows to automate and streamline approval processes, improving operational efficiency across business processes. Led migration of critical documentation from legacy platforms to modern technologies, improving accessibility and integration with modern systems.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in-on-scroll">
+                    <div class="timeline-image-container">
+                        <!-- GOLDMAN SACHS LOGO PLACEHOLDER -->
+                        <img src="images/gs_logo.png" alt="Goldman Sachs Logo" class="experience-image">
+                    </div>
+                    <div class="timeline-content">
+                        <h6>Apr 2023 - Apr 2024</h6>
+                        <h2>Goldman Sachs</h2>
+                        <h5>Software Engineer - Kong API Gateway & GraphQL</h5>
+                        <p>Architected and implemented a Kong-based API Gateway, using proxying, load balancing, and plugins to provide centralized API management across multiple projects. Designed and implemented a GraphQL solution that consolidated data from multiple sources through a unified endpoint, simplifying integrations and improving data accessibility. Developed automated monitoring workflows using BPMN and Groovy to identify control breaches and notify supervisors in real time.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in-on-scroll">
+                    <div class="timeline-image-container">
+                        <!-- GOLDMAN SACHS LOGO PLACEHOLDER -->
+                        <img src="images/gs_logo.png" alt="Goldman Sachs Logo" class="experience-image">
+                    </div>
+                    <div class="timeline-content">
+                        <h6>Jul 2020 - Apr 2023</h6>
+                        <h2>Goldman Sachs</h2>
+                        <h5>Software Engineer - Data Modeling & Data Curation</h5>
+                        <p>Contributed to the open-source Legend platform, working across data modeling, compiler, parser, UI, and execution capabilities for handling flat data. Led data curation initiatives for large-scale reference data, applying data modeling and data quality practices to improve data integrity. Developed services for transforming data and integrating it into Terraform-based ETL pipelines, streamlining data processing workflows. Built and integrated React-based UI components with SRE tooling including Prometheus and Grafana to provide real-time monitoring and performance visibility.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <br>
+        <br>
+        <section id="Projects">
+            <h2 class="section-title" style="margin-bottom: 10px; text-align: left; font-size: 24px; letter-spacing: 3px; width:100%;">Things I've Built</h2>
+            <div class="project-entry fade-in-on-scroll">
+                <a href="#" class="project-entry">
+                    <!-- PROJECT 1 IMAGE PLACEHOLDER -->
+                    <span class="image main"><img src="images/project1_placeholder.jpg" alt="Legend Platform" /></span>
+                    <p class="project-title">Legend Platform (Open Source Contribution)</p>
+                    <p class="project-description">Contributed to the open-source Legend platform at Goldman Sachs, working on core areas including data modeling, compiler/parser functionality, user interface (UI), and execution capabilities for handling flat data.</p>
+                </a>
+            </div>
+            <div class="project-entry fade-in-on-scroll">
+                <a href="#" class="project-entry">
+                    <!-- PROJECT 2 IMAGE PLACEHOLDER -->
+                    <span class="image main"><img src="images/project2_placeholder.jpg" alt="E-Challan App" /></span>
+                    <p class="project-title">E-Challan & Load Management App</p>
+                    <p class="project-description">Built robust React-based application features including E-Challan and Load Management logic, smoothly integrating intuitive frontend workflows directly with powerful backend Java APIs.</p>
+                </a>
+            </div>
+            <div class="project-entry fade-in-on-scroll">
+                <a href="#" class="project-entry">
+                    <!-- PROJECT 3 IMAGE PLACEHOLDER -->
+                    <span class="image main"><img src="images/project3_placeholder.jpg" alt="PWA and WhatsApp Integration" /></span>
+                    <p class="project-title">Progressive Web Application (PWA) & WhatsApp Integration</p>
+                    <p class="project-description">Developed core functionality for a PWA, featuring push notifications, image capture, and offline capabilities. Also engineered a WhatsApp integration utilizing AWS and Meta APIs to enhance external messaging capabilities.</p>
+                </a>
+            </div>
+            <div class="project-entry fade-in-on-scroll">
+                <a href="#" class="project-entry">
+                    <!-- PROJECT 4 IMAGE PLACEHOLDER -->
+                    <span class="image main"><img src="images/project4_placeholder.jpg" alt="Data Quality Framework" /></span>
+                    <p class="project-title">Data Quality & Optimization Framework</p>
+                    <p class="project-description">Spearheaded an enterprise data optimization initiative that resulted in reducing data discrepancies by 90% via a comprehensive data quality framework, while also improving overall data processing efficiency by 85%.</p>
+                </a>
+            </div>
+        </section>
+        <br>
+        <br>
         
-        align: 'right',
-        verticalAlign: 'middle'
-    },
-
-   plotOptions: {
-         series: {
-             label: {
-                  connectorAllowed: false
-              },
+        <section id="Education">
+            <h2 class="section-title" style="margin-bottom: 10px; text-align: left; font-size: 24px;">Education</h2>
+            <div class="education-entry fade-in-on-scroll">
+                <!-- COLLEGE IMAGE PLACEHOLDER -->
+                <img src="images/college_placeholder.jpg" alt="College" loading="lazy" class="college-image">
+                <div class="education-details">
+                    <h3 style="letter-spacing: 0.9px;">Birla Institute of Technology, Mesra</h3>
+                    <h4>Bachelor of Engineering (B.E.) — Information Technology</h4>
+                </div>
+            </div>
+        </section>
+        <section id="Skills" >
+            <h2 class="section-title" style="margin-bottom: 60px; text-align: left; font-size: 24px;">Skills</h2>
+            <div class="skills-container fade-in-on-scroll">
             
-           
+                <div class="tag-cloud">
+                    <ul class="cloud" role="navigation" aria-label="Webdev word cloud">
+                        <li><a href="#" data-weight="8">Java</a></li>
+                        <li><a href="#" data-weight="7">Spring</a></li>
+                        <li><a href="#" data-weight="8">React</a></li>
+                        <li><a href="#" data-weight="7">REST APIs</a></li>
+                        <li><a href="#" data-weight="6">GraphQL</a></li>
+                        <li><a href="#" data-weight="5">Microservices</a></li>
+                        <li><a href="#" data-weight="8">SQL</a></li>
+                        <li><a href="#" data-weight="6">Python</a></li>
+                        <li><a href="#" data-weight="7">JavaScript</a></li>
+                        <li><a href="#" data-weight="4">C/C++</a></li>
+                        <li><a href="#" data-weight="8">AWS</a></li>
+                        <li><a href="#" data-weight="7">Terraform</a></li>
+                        <li><a href="#" data-weight="6">Kong API Gateway</a></li>
+                        <li><a href="#" data-weight="5">Data Modeling</a></li>
+                        <li><a href="#" data-weight="6">Prometheus</a></li>
+                        <li><a href="#" data-weight="5">Grafana</a></li>
+                        <li><a href="#" data-weight="4">Camunda BPMN</a></li>
+                        <li><a href="#" data-weight="4">Groovy</a></li>
+                        <li><a href="#" data-weight="8">CI/CD</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+<br>
+<br>
+        <footer id="Contact" class="fade-in-on-scroll">
+            <h2 class="contact-header">Get In Touch</h2>
             
-           
-         }
-     },
-
-    series: [{
-
-             name:"rating",
-             data: c
-         },
-         
+            <div class="footer-contact-icons">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=poojaparlapalli@gmail.com" target="_blank">
+                    <img src="https://img.icons8.com/ios-glyphs/30/000000/gmail.png" alt="Gmail">
+                </a>
+                <a href="#" target="_blank">
+                    <img src="https://img.icons8.com/ios-glyphs/30/000000/linkedin.png" alt="LinkedIn">
+                </a>
+            </div>
+            <hr style="border-top: 1px solid rgba(255, 255, 255, 0.2); width: 20%; margin: 20px auto;">
+            <p style="font-size: 0.9rem;">
+                Designed and built for <a href="#" target="_blank" style="color: #FF9F55; text-decoration: none;">Pooja Parlapalli</a>.
+            </p>
+        </footer>
+        <div class="fixed-contact-sidebar">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=poojaparlapalli@gmail.com" target="_blank">
+                <img src="https://img.icons8.com/ios-glyphs/30/000000/gmail.png" alt="Gmail">
+            </a>
+            <a href="#" target="_blank">
+                <img src="https://img.icons8.com/ios-glyphs/30/000000/linkedin.png" alt="LinkedIn">
+            </a>
+        </div>
         
-    ],
-});
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script> <script>
+            function toggleTheme() {
+                document.body.classList.toggle("dark-theme");
+            }
+        </script>
+    </div>
     
-
-
- responsive: {
-         rules: [{
-             condition: {
-                 maxWidth: 500
-             },
-             chartOptions: {
-                legend: {
-                     layout: 'horizontal',
-                     align: 'center',
-                     verticalAlign: 'bottom'
-                 }
-             }
-         }]
-     }
-
- }
-  
- //piechart   
-
-  var xhttp2 = new XMLHttpRequest();
-
-
- xhttp2.onreadystatechange=function(){
-                                    if(this.readyState==4 && this.status==200)
-                                    {
-                                        var pchart=JSON.parse(xhttp2.responseText);
-                                        console.log(pchart.result[0].verdict);
-                                         piechart(pchart)
-                                    }                              };
-                                   
- xhttp2.open("GET","https://codeforces.com/api/user.status?handle="+a,true);
- xhttp2.send();
-
- function piechart(p_chart)
- {
-
-  var count_right=0;
-    var count_wrong=0;
-    var count_tle=0
-    var count_per1;
-    var count_per2;
-    var count_per3;
-
-
-  for(var i=0;i<p_chart.result.length;i++)
-    {
-      console.log(5)
-      if(p_chart.result[i].verdict==="OK")
-      {
-        count_right++;
-      }
-      else if(p_chart.result[i].verdict==="WRONG_ANSWER")
-      {
-        count_wrong++;
-      }
-      else if(p_chart.result[i].verdict==="MEMORY_LIMIT_EXCEEDED")
-      {
-         count_tle++
-      }
-    }
-    //console.log(count_right);
-    //console.log(count_wrong);
-    //console.log(count_tle);
-
-
-    count_per1=(count_tle/(count_tle+count_right+count_wrong))*100;
-    count_per2=(count_right/(count_tle+count_right+count_wrong))*100;
-    count_per3=(count_wrong/(count_tle+count_right+count_wrong))*100;
-
-    console.log(count_per1);
-     console.log(count_per2);
-     console.log(count_per3);
-    
-
-    var chart = new CanvasJS.Chart("chartContainer",
-    {
-      title:{
-        text: "rating of codeforces"
-      },
-      data: [
-      {
-       type: "doughnut",
-       dataPoints: [
-       {  y: count_per1, indexLabel: "right answers" },
-       {  y: count_per2, indexLabel: "wrong answer" },
-       {  y: count_per3, indexLabel: "memory limit exceeded" }
-       ]
-       
-      }
-     ]
-   });
-
-    chart.render();
- }
-}
-
- </script>
-
+    <div class="chat-widget-container">
+        <div class="chat-icon" id="chat-icon-toggle">
+            <i class="fas fa-robot"></i>
+        </div>
+        
+        <div class="chat-window hidden" id="chat-window">
+            
+            <div class="chat-header">
+    Chat with Pooja's AI
+    <button onclick="toggleChatWindow(false)">
+        <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+    </button>
+</div>
+            <div class="chat-login-form" id="chat-login-form">
+                <h3 style="color: #1a1a1a;">Welcome!</h3>
+                <input type="text" id="user-name" placeholder="What's your name?" style="text-align: center;" required>
+                <input type="email" id="user-email" placeholder="you@example.com" style="text-align: center;" required>
+                <button onclick="startChat()">Start Chat</button>
+            </div>
+            
+            <div class="chat-body hidden" id="chat-body">
+                <div class="loading-dots" id="loading-dots">
+                    <span>.</span><span>.</span><span>.</span>
+                </div>
+            </div>
+            <div class="chat-input-area hidden" id="chat-input-area">
+                <div id="chat-prompts">
+                    </div>
+                <div class="chat-input-controls">
+                    <input type="text" id="user-input" placeholder="Write your message here" onkeydown="handleInputKey(event)">
+                   <button onclick="sendMessage()">
+        <svg class="send-icon" viewBox="0 0 100 85">
+            <polygon points="50,0 100,85 0,85"/>
+        </svg>
+    </button>
+                </div>
+            </div>
+        </div>
+    <script>
+        const portfolioContent = `
+            Hi! I'm Pooja Parlapalli, a Full-Stack Software Engineer with 6+ years of experience building scalable web applications. 
+            
+            Experience:
+            - Mar 2025 - Present: Full-Stack Software Engineer at SEMICAB. Built full-stack apps (Java/Spring, React), PWA functionalities, and WhatsApp integration via AWS/Meta APIs.
+            - Jul 2020 - Nov 2024: Software Engineer / Senior Software Engineer at Goldman Sachs. Engineered smart workflows (BPMN), implemented Kong API Gateways, led data curation via open-source Legend platform, and consolidated APIs using GraphQL.
+            
+            Skills:
+            - Languages: Java, SQL, Python, JavaScript, C, C++.
+            - Backend/Cloud: Spring, REST APIs, GraphQL, Microservices, AWS, Terraform, Kong API Gateway.
+            - Frontend: React, Progressive Web Applications.
+            - Other: Prometheus, Grafana, ETL, Data Modeling, Camunda BPMN.
+            
+            Education:
+            - Birla Institute of Technology, Mesra: Bachelor of Engineering (B.E.) — Information Technology.
+        `;
+        
+        const funnyFallbacks = [
+            "That's an interesting question! But I specialize in Pooja's portfolio. Want to hear about her time at Goldman Sachs or SEMICAB?",
+            "I'm afraid I don't have that data! Can I interest you in Pooja's Java and React skills instead?",
+            "Error 404! I'm just here to represent Pooja's software engineering background. Should we talk about GraphQL or AWS?"
+        ];
+        const complimentResponses = [
+            "Thank you! Pooja worked hard on this. What part of her full-stack experience stands out to you?",
+            "Very kind of you! Want to hear more about her API Gateway architectural work?"
+        ];
+        const quickPrompts = [
+            "Favorite Project",
+            "Core Skills",
+            "Tell a joke"
+        ];
+        
+        let chatHistory = [];
+        let userName = '';
+        let userEmail = '';
+        let isChatActive = false;
+        let promptCount = 0; 
+        
+        const chatWindow = document.getElementById('chat-window');
+        const chatIcon = document.getElementById('chat-icon-toggle');
+        const chatBody = document.getElementById('chat-body');
+        const chatInputArea = document.getElementById('chat-input-area');
+        const chatLoginForm = document.getElementById('chat-login-form');
+        const userInput = document.getElementById('user-input');
+        const loadingDots = document.getElementById('loading-dots');
+        const chatPromptsContainer = document.getElementById('chat-prompts'); 
+        
+        function toggleChatWindow(show) {
+            if (show !== undefined) {
+                chatWindow.classList.toggle('hidden', !show);
+            } else {
+                chatWindow.classList.toggle('hidden');
+            }
+            if (!chatWindow.classList.contains('hidden')) {
+                if (isChatActive) {
+                    chatLoginForm.classList.add('hidden'); 
+                    chatBody.classList.remove('hidden');
+                    chatInputArea.classList.remove('hidden');
+                    renderQuickPrompts();
+                } else {
+                    chatLoginForm.classList.remove('hidden');
+                    chatBody.classList.add('hidden');
+                    chatInputArea.classList.add('hidden');
+                }
+            }
+        }
+        
+        function appendMessage(text, sender) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('message');
+            messageElement.classList.add(sender === 'user' ? 'user-message' : 'ai-message');
+            
+            const formattedText = text
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>');
+            messageElement.innerHTML = formattedText;
+            chatBody.appendChild(messageElement);
+            chatBody.scrollTop = chatBody.scrollHeight; 
+            
+            chatHistory.push({ sender, text });
+        }
+        function renderQuickPrompts() {
+            chatPromptsContainer.innerHTML = ''; 
+            quickPrompts.forEach(promptText => {
+                const button = document.createElement('button');
+                button.classList.add('prompt-button');
+                button.textContent = promptText;
+                button.onclick = () => sendPrompt(promptText);
+                chatPromptsContainer.appendChild(button);
+            });
+        }
+        
+        function sendPrompt(promptText) {
+            userInput.value = promptText;
+            sendMessage();
+        }
+        
+        function getLastAiQuestion() {
+            for (let i = chatHistory.length - 1; i >= 0; i--) {
+                if (chatHistory[i].sender === 'ai' && chatHistory[i].text.includes('?')) {
+                    return chatHistory[i].text.toLowerCase();
+                }
+            }
+            return null;
+        }
+        function generateStaticResponse(query) {
+            query = query.toLowerCase();
+            const content = portfolioContent.toLowerCase();
+            
+            let response = "";
+            let lastQuestion = getLastAiQuestion();
+            if (query.includes("favorite project")) {
+                return "Pooja made incredible contributions to the **open-source Legend platform** at Goldman Sachs, working directly on its data modeling, compiler, and UI capabilities!";
+            }
+            if (query.includes("core skills") || query.includes("skills")) {
+                return "Pooja's main strengths are in **Java, Spring, React, GraphQL, and AWS**. She's a robust full-stack engineer!";
+            }
+            if (query.includes("joke")) {
+                return "Why do Java developers wear glasses? Because they can't C#! 😄";
+            }
+            if (query.match(/^(hello|hi|hey|greetings)$/i)) {
+                return `Hello, ${userName}! I'm Pooja's AI assistant. Want to hear about her engineering experience?`;
+            }
+            if (query.includes("thanks") || query.includes("thank you") || query.includes("ok") || query.includes("bye")) {
+                return "Anytime! Reach out to Pooja via the email in the footer if you need anything else.";
+            }
+            if (query.includes("nice portfolio") || query.includes("great job") || query.includes("awesome") || query.includes("cool")) {
+                const randomIndex = Math.floor(Math.random() * complimentResponses.length);
+                return complimentResponses[randomIndex];
+            }
+            if (query.match(/^(yes|yep|yeah)$/i)) {
+                response = "Great! Let's talk about Pooja's full-stack development using Java and React, or her time at Goldman Sachs. Which sounds better?";
+            } else if (query.match(/^(no|nope)$/i)) {
+                response = "No problem! Feel free to ask about anything else.";
+            }
+            if (response !== "") return response;
+            
+            if (query.includes("contact")) {
+                return "You can reach Pooja directly at **poojaparlapalli@gmail.com**!";
+            }
+            if (query.includes("experience") || query.includes("work")) {
+                return "Pooja works as a **Full-Stack Software Engineer at SEMICAB** and previously spent 4 years as a **Senior Software Engineer at Goldman Sachs**.";
+            }
+            
+            if (query.includes("about")) {
+                return "Pooja is a Full-Stack Software Engineer with 6+ years of experience building scalable systems with Java, React, REST, and GraphQL.";
+            }
+            if (query.includes("goldman sachs")) {
+                return "At Goldman Sachs, Pooja engineered BPMN-based smart workflows, architected a Kong API Gateway, built GraphQL layers, and contributed to the Legend open-source platform.";
+            }
+            if (query.includes("semicab")) {
+                return "At SEMICAB, Pooja builds full-stack features using Java/Spring and React, including PWA functionality and WhatsApp integration.";
+            }
+            if (query.includes("education") || query.includes("degree") || query.includes("mesra") || query.includes("bit")) {
+                return "Pooja earned her Bachelor of Engineering (B.E.) in Information Technology from the **Birla Institute of Technology, Mesra**.";
+            }
+            
+            if (response === "") {
+                const randomIndex = Math.floor(Math.random() * funnyFallbacks.length);
+                response = funnyFallbacks[randomIndex];
+            }
+            return response;
+        }
+        async function sendMessage() {
+            const userMessage = userInput.value.trim();
+            if (!userMessage || !isChatActive) return;
+            appendMessage(userMessage, 'user');
+            userInput.value = '';
+            
+            promptCount++;
+            loadingDots.classList.add('visible');
+            chatBody.scrollTop = chatBody.scrollHeight;
+            
+            await new Promise(resolve => setTimeout(resolve, 800)); 
+            const responseText = generateStaticResponse(userMessage);
+            loadingDots.classList.remove('visible');
+            appendMessage(responseText, 'ai');
+            
+            if (promptCount >= 5) { 
+                await new Promise(resolve => setTimeout(resolve, 1000)); 
+                const finalMessage = `If you have more detailed questions, feel free to contact Pooja directly via email!`;
+                appendMessage(finalMessage, 'ai');
+                promptCount = 0; 
+            }
+        }
+        
+        function handleInputKey(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+        
+        chatIcon.addEventListener('click', () => {
+            toggleChatWindow();
+        });
+        function alert(message) {
+            const chatHeader = document.querySelector('.chat-header');
+            const alertBox = document.createElement('div');
+            alertBox.style.cssText = 'position: absolute; top: 0; left: 0; width: 100%; padding: 10px; background-color: #FFFFFF; color: #333; text-align: center; border-radius: 12px 12px 0 0; z-index: 10; font-size: 14px;';
+            alertBox.textContent = message;
+            chatWindow.prepend(alertBox);
+            setTimeout(() => {
+                alertBox.remove();
+            }, 3000);
+        }
+        
+        window.startChat = function() {
+            userName = document.getElementById('user-name').value.trim();
+            userEmail = document.getElementById('user-email').value.trim();
+            if (userName.length === 0 || userEmail.length === 0) {
+                alert('Please enter your name and email to start the chat.');
+                return;
+            }
+            
+            const validEmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+            if (!validEmailRegex.test(userEmail)) {
+                alert('Please use a valid email address (e.g., user@domain.com) to start the chat.');
+                return;
+            }
+            
+            chatLoginForm.classList.add('hidden'); 
+            
+            chatBody.classList.remove('hidden');
+            chatInputArea.classList.remove('hidden');
+            isChatActive = true;
+            promptCount = 0; 
+            
+            renderQuickPrompts();
+            
+            const initialBotMessage = `Hey ${userName}! I'm Pooja's AI assistant, here to help you — ask me anything about her software engineering experience!`;
+            
+            appendMessage(initialBotMessage, 'ai');
+        };
+        
+        renderQuickPrompts();
+        
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const animatedItems = document.querySelectorAll('.fade-in-on-scroll');
+            if ("IntersectionObserver" in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1
+                });
+                animatedItems.forEach(item => {
+                    observer.observe(item);
+                });
+            }
+        });
+    </script>
 </body>
 </html>
-
